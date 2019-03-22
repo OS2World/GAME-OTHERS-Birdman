@@ -1,0 +1,23 @@
+/*
+    birdman.rc
+    birdman saver module resource script file
+
+    (C) 1998 Mike, Vienna
+*/
+
+#include <os2.h>
+#include "birdman.h"
+
+POINTER IDR_PTR_GUN  "bitmaps\\gun.ptr"
+BITMAP  IDR_BMP_BIRD "bitmaps\\bird.bmp"
+
+MENU ID_RESOURCE {
+  SUBMENU  "~Ende",                  -1,                MIS_TEXT {
+    MENUITEM "~Wirklich ?\tF3",      ID_MENU_EXIT,      MIS_TEXT
+  }
+}
+
+ACCELTABLE ID_RESOURCE {
+  VK_F3, ID_KEY_EXIT, VIRTUALKEY
+}
+

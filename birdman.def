@@ -1,0 +1,14 @@
+;
+;	birdman.def
+;	birdman saver module definition file
+;
+;	(C) 1998 Mike, Vienna
+;
+
+LIBRARY      birdman INITINSTANCE TERMINSTANCE
+DESCRIPTION  'ScreenSaverModule BIRDMAN (C) 1998 Mike, Vienna'
+
+DATA	MULTIPLE NONSHARED
+EXPORTS
+	StartScreenSaver @2
+	StopScreenSaver  @3
