@@ -1,0 +1,70 @@
+/*
+    birdman.rc
+    Birdman for OS/2 - resource script
+
+    Original: (C) 1998 Mike, Vienna
+    OS2World port: (C) 2026, OS2World
+*/
+
+#include <os2.h>
+#include "birdman.h"
+
+POINTER IDR_PTR_GUN  "gun.ptr"
+BITMAP  IDR_BMP_BIRD "bird.bmp"
+
+MENU ID_RESOURCE {
+    SUBMENU "~Game",    IDM_SUBMENU_GAME, MIS_TEXT {
+        MENUITEM "~New Game\tCtrl+N",      IDM_NEW,   MIS_TEXT
+        MENUITEM "~Pause Game\tCtrl+P",    IDM_PAUSE, MIS_TEXT
+        MENUITEM "~Quit Game\tCtrl+Q",     IDM_QUIT,  MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "E~xit\tCtrl+X",          IDM_EXIT,  MIS_TEXT
+    }
+    SUBMENU "~Options", IDM_SUBMENU_OPT, MIS_TEXT {
+        SUBMENU "~Language", IDM_SUBMENU_LANG, MIS_TEXT {
+            MENUITEM "English",            IDM_LANG_EN, MIS_TEXT
+            MENUITEM "Espanol",            IDM_LANG_ES, MIS_TEXT
+            MENUITEM "Nederlands",         IDM_LANG_NL, MIS_TEXT
+            MENUITEM "Deutsch",            IDM_LANG_DE, MIS_TEXT
+            MENUITEM "Francais",           IDM_LANG_FR, MIS_TEXT
+            MENUITEM "Italiano",           IDM_LANG_IT, MIS_TEXT
+        }
+        MENUITEM SEPARATOR
+        MENUITEM "~Save settings on exit", IDM_SAVEONEXIT, MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "~Background Run\tCtrl+B", IDM_BACKGRND, MIS_TEXT
+        MENUITEM "~Frame Controls\tCtrl+F", IDM_FRAME,    MIS_TEXT
+    }
+    SUBMENU "~Help",    IDM_SUBMENU_HELP, MIS_TEXT {
+        MENUITEM "~About...",              IDM_ABOUT, MIS_TEXT
+    }
+}
+
+ACCELTABLE ID_RESOURCE {
+    "n", IDM_NEW,      CHAR, CONTROL
+    "N", IDM_NEW,      CHAR, CONTROL
+    "p", IDM_PAUSE,    CHAR, CONTROL
+    "P", IDM_PAUSE,    CHAR, CONTROL
+    "q", IDM_QUIT,     CHAR, CONTROL
+    "Q", IDM_QUIT,     CHAR, CONTROL
+    "x", IDM_EXIT,     CHAR, CONTROL
+    "X", IDM_EXIT,     CHAR, CONTROL
+    "b", IDM_BACKGRND, CHAR, CONTROL
+    "B", IDM_BACKGRND, CHAR, CONTROL
+    "f", IDM_FRAME,    CHAR, CONTROL
+    "F", IDM_FRAME,    CHAR, CONTROL
+}
+
+DLGTEMPLATE IDD_ABOUT
+   {
+   DIALOG "About Birdman", 0, 32, 24, 240, 120,, FCF_TITLEBAR | FCF_DLGBORDER
+      {
+      CTEXT "Birdman for OS/2",       -1, 10, 98, 220, 8
+      CTEXT "Version 1.1",            -1, 10, 86, 220, 8
+      CTEXT "OpenWatcom Release",     -1, 10, 74, 220, 8
+      CTEXT "(c) 1998, Mike, Vienna", -1, 10, 62, 220, 8
+      CTEXT "(c) 2026, OS2World",     -1, 10, 50, 220, 8
+      CTEXT "BSD 3-Clause License",   -1, 10, 38, 220, 8
+      DEFPUSHBUTTON "Close" DID_OK,       98, 14, 44, 14, WS_GROUP
+      }
+   }
