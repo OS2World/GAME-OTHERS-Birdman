@@ -5,6 +5,8 @@ Open Watcom port
 Birds fly across the screen from right to left. Left-click to shoot them
 before they escape. Double right-click kills all birds at once.
 
+![Birdman Screenshot](doc/Birdman.png)
+
 ## Build
 
 Requires Open Watcom 2.0 and OS/2 Toolkit 4.5.
