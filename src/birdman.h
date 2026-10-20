@@ -25,6 +25,7 @@
 #define IDM_SAVEONEXIT     201
 #define IDM_BACKGRND       202
 #define IDM_FRAME          203
+#define IDM_KEYMAP         204
 
 /* Menu IDs - Language submenu (300-399) */
 #define IDM_LANG_EN        300
@@ -35,6 +36,9 @@
 #define IDM_LANG_IT        305
 
 /* Menu IDs - Help menu (900-999) */
+#define IDM_HELPGENERAL    901
+#define IDM_HELPINDEX      902
+#define IDM_HELPKEYS       903
 #define IDM_ABOUT          999
 
 /* Submenu cascade IDs (1000-1099) */
@@ -45,6 +49,11 @@
 
 /* Dialog IDs */
 #define IDD_ABOUT          100
+#define IDD_KEYMAP         101
+#define IDC_KM_HINT        120
+#define IDC_KM_LABEL       121     /* +0..1 */
+#define IDC_KM_ENTRY       123     /* +0..1 */
+#define IDC_KM_DEFAULT     125
 
 /* Language defines */
 #define LANG_EN    0
@@ -69,6 +78,20 @@ enum {
     STR_MENU_FRAME,
     STR_MENU_HELP,
     STR_MENU_ABOUT,
+    STR_MENU_KEYMAP,
+    STR_KM_TITLE,
+    STR_KM_HINT,
+    STR_KM_ACT0,
+    STR_KM_ACT1,
+    STR_KM_BTN1,
+    STR_KM_BTN2,
+    STR_KM_BTN3,
+    STR_KM_DEFAULT,
+    STR_DLG_OK,
+    STR_DLG_CANCEL,
+    STR_MENU_HELPGEN,
+    STR_MENU_HELPIDX,
+    STR_MENU_HELPKEYS,
     STR_COUNT
 };
 

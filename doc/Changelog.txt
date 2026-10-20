@@ -1,6 +1,19 @@
 Birdman Changelog
 =================
 
+1.2 (2026-10-20)
+- New Options > Key Mapping... dialog (mouse only): choose the mouse buttons
+  that shoot one bird (default left) and that shoot all birds by double-click
+  (default right); the two actions never share a button; saved in BIRDMAN.CFG;
+  the dialog is translated in all six languages
+- Online help in all six languages (help\birdman_xx.hlp, built with wipfc):
+  Help menu with Extended help (F2), Help index (F11) and Keys help (F9)
+- Fixed: makefile.wat now creates the bin folder (the compile failed with
+  E1118 when bin did not exist) and builds the help files
+- "Save settings on exit" moved to the bottom of the Options menu and is
+  now on by default
+- About dialog, BLDLEVEL string and documentation updated to version 1.2
+
 1.1 (2026-09-14)
 - Increased window and game area to 960x720 (1.5x original 640x480)
 - Bird sprites scaled to 128x128 pixels (2x, using 4-point GpiBitBlt stretch)

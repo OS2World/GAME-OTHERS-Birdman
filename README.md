@@ -3,7 +3,8 @@
 Open Watcom port
 
 Birds fly across the screen from right to left. Left-click to shoot them
-before they escape. Double right-click kills all birds at once.
+before they escape. Double right-click kills all birds at once. The mouse
+buttons can be changed in Options > Key Mapping.
 
 ## Build
 
@@ -31,8 +32,9 @@ Output: `bin\birdman.exe`
 | Ctrl+X      | Exit                      |
 | Ctrl+B      | Background Run toggle     |
 | Ctrl+F      | Frame Controls toggle     |
-| Left click  | Shoot one bird            |
-| Dbl R-click | Kill all birds            |
+| F2 / F11 / F9 | Extended help / Help index / Keys help |
+| Left click  | Shoot one bird (default)  |
+| Dbl R-click | Kill all birds (default)  |
 
 ## Changes from Original (v0.01, 1998)
 
@@ -42,6 +44,8 @@ Output: `bin\birdman.exe`
 - Settings persistence
 - Background Run and Frame Controls
 - About dialog
+- Key Mapping (Options > Key Mapping...): choose the mouse buttons (version 1.2)
+- Online help in six languages, in `bin\help` (version 1.2)
 
 ## License
 

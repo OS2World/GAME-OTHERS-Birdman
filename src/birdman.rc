@@ -21,6 +21,7 @@ MENU ID_RESOURCE {
         MENUITEM "E~xit\tCtrl+X",          IDM_EXIT,  MIS_TEXT
     }
     SUBMENU "~Options", IDM_SUBMENU_OPT, MIS_TEXT {
+        MENUITEM "~Key Mapping...",        IDM_KEYMAP, MIS_TEXT
         SUBMENU "~Language", IDM_SUBMENU_LANG, MIS_TEXT {
             MENUITEM "English",            IDM_LANG_EN, MIS_TEXT
             MENUITEM "Espanol",            IDM_LANG_ES, MIS_TEXT
@@ -30,12 +31,16 @@ MENU ID_RESOURCE {
             MENUITEM "Italiano",           IDM_LANG_IT, MIS_TEXT
         }
         MENUITEM SEPARATOR
-        MENUITEM "~Save settings on exit", IDM_SAVEONEXIT, MIS_TEXT
-        MENUITEM SEPARATOR
         MENUITEM "~Background Run\tCtrl+B", IDM_BACKGRND, MIS_TEXT
         MENUITEM "~Frame Controls\tCtrl+F", IDM_FRAME,    MIS_TEXT
+        MENUITEM SEPARATOR
+        MENUITEM "~Save settings on exit", IDM_SAVEONEXIT, MIS_TEXT
     }
     SUBMENU "~Help",    IDM_SUBMENU_HELP, MIS_TEXT {
+        MENUITEM "~Extended help...\tF2",  IDM_HELPGENERAL, MIS_TEXT
+        MENUITEM "Help ~index...\tF11",    IDM_HELPINDEX,   MIS_TEXT
+        MENUITEM "~Keys help...\tF9",      IDM_HELPKEYS,    MIS_TEXT
+        MENUITEM SEPARATOR
         MENUITEM "~About...",              IDM_ABOUT, MIS_TEXT
     }
 }
@@ -53,6 +58,9 @@ ACCELTABLE ID_RESOURCE {
     "B", IDM_BACKGRND, CHAR, CONTROL
     "f", IDM_FRAME,    CHAR, CONTROL
     "F", IDM_FRAME,    CHAR, CONTROL
+    VK_F2,  IDM_HELPGENERAL, VIRTUALKEY
+    VK_F11, IDM_HELPINDEX,   VIRTUALKEY
+    VK_F9,  IDM_HELPKEYS,    VIRTUALKEY
 }
 
 DLGTEMPLATE IDD_ABOUT
@@ -60,11 +68,27 @@ DLGTEMPLATE IDD_ABOUT
    DIALOG "About Birdman", 0, 32, 24, 240, 120,, FCF_TITLEBAR | FCF_DLGBORDER
       {
       CTEXT "Birdman for OS/2",       -1, 10, 98, 220, 8
-      CTEXT "Version 1.1",            -1, 10, 86, 220, 8
+      CTEXT "Version 1.2",            -1, 10, 86, 220, 8
       CTEXT "OpenWatcom Release",     -1, 10, 74, 220, 8
       CTEXT "(c) 1998, Mike, Vienna", -1, 10, 62, 220, 8
       CTEXT "(c) 2026, OS2World",     -1, 10, 50, 220, 8
       CTEXT "BSD 3-Clause License",   -1, 10, 38, 220, 8
       DEFPUSHBUTTON "Close" DID_OK,       98, 14, 44, 14, WS_GROUP
+      }
+   }
+
+DLGTEMPLATE IDD_KEYMAP
+   {
+   DIALOG "Key Mapping", IDD_KEYMAP, 32, 32, 260, 92,, FCF_TITLEBAR | FCF_DLGBORDER
+      PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+      {
+      LTEXT       "Click the box, then click it again with the mouse button to use.", IDC_KM_HINT, 8, 68, 244, 18, DT_WORDBREAK
+      LTEXT       "Shoot a bird",                   IDC_KM_LABEL+0,   8, 50, 124,  8
+      ENTRYFIELD  "",                               IDC_KM_ENTRY+0, 136, 48, 116, 12, ES_MARGIN | ES_READONLY | WS_TABSTOP | WS_GROUP
+      LTEXT       "Shoot all birds (double-click)", IDC_KM_LABEL+1,   8, 32, 124,  8
+      ENTRYFIELD  "",                               IDC_KM_ENTRY+1, 136, 30, 116, 12, ES_MARGIN | ES_READONLY | WS_TABSTOP
+      DEFPUSHBUTTON "OK",                           DID_OK,           8,  6,  76, 14, WS_GROUP
+      PUSHBUTTON    "Cancel",                       DID_CANCEL,      92,  6,  76, 14
+      PUSHBUTTON    "Default",                      IDC_KM_DEFAULT, 176,  6,  76, 14
       }
    }
